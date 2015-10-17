@@ -39,8 +39,13 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
 
-    @Test
+    @Test(expectedExceptions=Exception.class)
     public void negativeNumbers() throws Exception{
-    	assertEquals(0, Calculator.add("-1"));
+    	Calculator.add("-1"); 
+    }
+
+    @Test
+    public void greaterThan1000() throws Exception{
+    	assertEquals(20, Calculator.add("10,10,1001"));
     }
 }
