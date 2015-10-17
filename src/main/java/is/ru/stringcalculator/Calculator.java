@@ -27,23 +27,28 @@ public class Calculator {
 		return Integer.parseInt(number);
 	}
 	
-	private static String[] splitNumbers(String numbers){
+	private static String[] splitNumbers(String numbers)throws Exception{
 	    return numbers.split(",");
 	}
 
-	private static String[] testNewLine(String numbers){
+	private static String[] testNewLine(String numbers)throws Exception{
 	    return numbers.split("\n");
 	}
       
-    private static int sum(String[] numbers){
+    private static int sum(String[] numbers) throws Exception{
  	    int total = 0;
+        for(String number : numbers){
+        	if(stringToInt(number) < 0){
+        		throw new Exception("Negative number!");
+        	}
+        }
         for(String number : numbers){
 		    total += toInt(number);
 		}
 		return total;
     }
 
-    private static String[] testSplitAndNewline(String numbers){
+    private static String[] testSplitAndNewline(String numbers)throws Exception{
 	    return numbers.split("\n|\\,");
 	}
 
