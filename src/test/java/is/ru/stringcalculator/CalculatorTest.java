@@ -20,27 +20,27 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testTwoNumbers()throws Exception {
+	public void testTwoNumbers() throws Exception {
 		assertEquals(3, Calculator.add("1,2"));
 	}	
 
 	@Test
-    public void testMultipleNumbers()throws Exception{
+    public void testMultipleNumbers() throws Exception{
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
     @Test
-    public void testNewLineNumbers()throws Exception{
+    public void testNewLineNumbers() throws Exception{
     	assertEquals(6, Calculator.add("1\n2\n3"));
     }
 
     @Test
-    public void testSliptNumbers()throws Exception{
+    public void testSliptNumbers() throws Exception{
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
 
-    @Test(exceptionException = Exception.class)throws Exception)
-    public void negativeNumbers()throws Exception{
-    	Calculator.add("-1"));
+    @Test
+    public void negativeNumbers() throws Exception{
+    	assertEquals(0, Calculator.add("-1"));
     }
 }
